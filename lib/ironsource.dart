@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:ironsource/Ironsource_consts.dart';
 import 'package:ironsource/models.dart';
-export 'banner.dart';
 
 class IronSource {
   static const MethodChannel _channel = MethodChannel("com.karnadi.ironsource");
@@ -47,14 +46,6 @@ class IronSource {
     await _channel.invokeMethod('showRewardedVideo');
   }
 
-  static Future<Null> showOfferwall() async {
-    await _channel.invokeMethod('showOfferwall');
-  }
-
-  static Future<bool> isInterstitialReady() async {
-    return await _channel.invokeMethod('isInterstitialReady');
-  }
-
   static Future<Null> activityResumed() async {
     await _channel.invokeMethod('activityResumed');
   }
@@ -65,10 +56,6 @@ class IronSource {
 
   static Future<bool> isRewardedVideoAvailable() async {
     return await _channel.invokeMethod('isRewardedVideoAvailable');
-  }
-
-  static Future<bool> isOfferwallAvailable() async {
-    return await _channel.invokeMethod('isOfferwallAvailable');
   }
 }
 
@@ -103,45 +90,6 @@ abstract class IronSourceListener {
       onRewardedVideoAvailabilityChanged(call.arguments);
     else if (call.method == ON_REWARDED_VIDEO_AD_STARTED)
       onRewardedVideoAdStarted();
-// Offerwall
-    else if (call.method == ON_OFFERWALL_AD_CREDITED)
-      onOfferwallAdCredited(OfferwallCredit(
-          credits: call.arguments["credits"],
-          totalCredits: call.arguments["totalCredits"],
-          totalCreditsFlag: call.arguments["totalCreditsFlag"]));
-    else if (call.method == ON_OFFERWALL_AVAILABLE)
-      onOfferwallAvailable(call.arguments);
-    else if (call.method == ON_OFFERWALL_CLOSED)
-      onOfferwallClosed();
-    else if (call.method == ON_OFFERWALL_CREDITS_FAILED)
-      onGetOfferwallCreditsFailed(IronSourceError(
-          errorCode: call.arguments["errorCode"],
-          errorMessage: call.arguments["errorMessage"]));
-    else if (call.method == ON_OFFERWALL_OPENED)
-      onOfferwallOpened();
-    else if (call.method == ON_OFFERWALL_SHOW_FAILED)
-      onOfferwallShowFailed(IronSourceError(
-          errorCode: call.arguments["errorCode"],
-          errorMessage: call.arguments["errorMessage"]));
-//    interstitial
-    else if (call.method == ON_INTERSTITIAL_AD_CLICKED)
-      onInterstitialAdClicked();
-    else if (call.method == ON_INTERSTITIAL_AD_CLOSED)
-      onInterstitialAdClosed();
-    else if (call.method == ON_INTERSTITIAL_AD_OPENED)
-      onInterstitialAdOpened();
-    else if (call.method == ON_INTERSTITIAL_AD_READY)
-      onInterstitialAdReady();
-    else if (call.method == ON_INTERSTITIAL_AD_SHOW_SUCCEEDED)
-      onInterstitialAdShowSucceeded();
-    else if (call.method == ON_INTERSTITIAL_AD_LOAD_FAILED)
-      onInterstitialAdLoadFailed(IronSourceError(
-          errorCode: call.arguments["errorCode"],
-          errorMessage: call.arguments["errorMessage"]));
-    else if (call.method == ON_INTERSTITIAL_AD_SHOW_FAILED)
-      onInterstitialAdShowFailed(IronSourceError(
-          errorCode: call.arguments["errorCode"],
-          errorMessage: call.arguments["errorMessage"]));
   }
 
   //  Rewarded video
@@ -160,32 +108,4 @@ abstract class IronSourceListener {
   void onRewardedVideoAdShowFailed(IronSourceError error);
 
   void onRewardedVideoAdClicked(Placement placement);
-
-  // Offer wall
-  void onOfferwallAvailable(bool available);
-
-  void onOfferwallOpened();
-
-  void onOfferwallShowFailed(IronSourceError error);
-
-  void onOfferwallAdCredited(OfferwallCredit reward);
-
-  void onGetOfferwallCreditsFailed(IronSourceError error);
-
-  void onOfferwallClosed();
-
-  // Interstitial
-  void onInterstitialAdClicked();
-
-  void onInterstitialAdReady();
-
-  void onInterstitialAdLoadFailed(IronSourceError error);
-
-  void onInterstitialAdOpened();
-
-  void onInterstitialAdClosed();
-
-  void onInterstitialAdShowSucceeded();
-
-  void onInterstitialAdShowFailed(IronSourceError error);
 }
