@@ -1,0 +1,98 @@
+PODS:
+  - FBAudienceNetwork (5.9.0):
+    - FBSDKCoreKit/Basics (>= 5.6.0)
+  - FBSDKCoreKit/Basics (7.1.1)
+  - Flutter (1.0.0)
+  - Google-Mobile-Ads-SDK (7.61.0):
+    - GoogleAppMeasurement (~> 6.0)
+  - GoogleAppMeasurement (6.6.1):
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
+    - GoogleUtilities/MethodSwizzler (~> 6.0)
+    - GoogleUtilities/Network (~> 6.0)
+    - "GoogleUtilities/NSData+zlib (~> 6.0)"
+    - nanopb (~> 1.30905.0)
+  - GoogleUtilities/AppDelegateSwizzler (6.6.0):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (6.6.0):
+    - PromisesObjC (~> 1.2)
+  - GoogleUtilities/Logger (6.6.0):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (6.6.0):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (6.6.0):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (6.6.0)"
+  - GoogleUtilities/Reachability (6.6.0):
+    - GoogleUtilities/Logger
+  - InMobiSDK/Core (9.0.7)
+  - ironsource (0.0.1):
+    - Flutter
+    - IronSourceAdMobAdapter
+    - IronSourceFacebookAdapter
+    - IronSourceInMobiAdapter
+    - IronSourceSDK
+  - IronSourceAdMobAdapter (4.3.13.0):
+    - Google-Mobile-Ads-SDK (= 7.61.0)
+    - IronSourceSDK (= 6.17.0.0)
+  - IronSourceFacebookAdapter (4.3.16.0):
+    - FBAudienceNetwork (= 5.9.0)
+    - IronSourceSDK (= 6.17.0.0)
+  - IronSourceInMobiAdapter (4.3.7.0):
+    - InMobiSDK/Core (= 9.0.7)
+    - IronSourceSDK (= 6.17.0.0)
+  - IronSourceSDK (6.17.0)
+  - nanopb (1.30905.0):
+    - nanopb/decode (= 1.30905.0)
+    - nanopb/encode (= 1.30905.0)
+  - nanopb/decode (1.30905.0)
+  - nanopb/encode (1.30905.0)
+  - PromisesObjC (1.2.9)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - ironsource (from `.symlinks/plugins/ironsource/ios`)
+
+SPEC REPOS:
+  trunk:
+    - FBAudienceNetwork
+    - FBSDKCoreKit
+    - Google-Mobile-Ads-SDK
+    - GoogleAppMeasurement
+    - GoogleUtilities
+    - InMobiSDK
+    - IronSourceAdMobAdapter
+    - IronSourceFacebookAdapter
+    - IronSourceInMobiAdapter
+    - IronSourceSDK
+    - nanopb
+    - PromisesObjC
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  ironsource:
+    :path: ".symlinks/plugins/ironsource/ios"
+
+SPEC CHECKSUMS:
+  FBAudienceNetwork: 648648b13d8ea3d39676542dece2b04dbe867497
+  FBSDKCoreKit: b46507dc8b8cefed31d644e74d7cc30e2a715ef8
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  Google-Mobile-Ads-SDK: 4c3b24b04293b4bb370b2cb392cdd3ee97c87752
+  GoogleAppMeasurement: 2fd5c5a56c069db635c8e7b92d4809a9591d0a69
+  GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
+  InMobiSDK: c3ec3fed998d8431ba31ad16565d102159e3f9e3
+  ironsource: aa5c2699d83b11f98ba40cdbd591097ca7f325e2
+  IronSourceAdMobAdapter: 663a9d7d0057bb235765be9841e4cef54d8e0ff5
+  IronSourceFacebookAdapter: bfec6693438e34fa7798b1abc5682c2696c1b7df
+  IronSourceInMobiAdapter: 8f19374f2117bf4dde426df7c63c3279c92997ba
+  IronSourceSDK: 88dde749fcc6dd515191ddfa32dbe6b2a99b29d3
+  nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
+  PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
+
+PODFILE CHECKSUM: b1f7a399522c118a74b177b13c01eca692aa7e6d
+
+COCOAPODS: 1.8.4
